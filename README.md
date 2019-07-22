@@ -8,3 +8,4 @@ Spread the url to your friend
 
 ## Todo
  - listing all web/api URL or interface in news and media industry
+ - finding a http host for the trash `http://www.tvb.com/` site, which dose not support HTTPS
