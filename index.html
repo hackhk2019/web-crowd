@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1 id='msgTitle'> I 💖 you: </h1>
+    <p id='msg'></p>
+    <p id='msgTotal'></p>
+
+<script>
+const TARGET_URL = "http://www.tvb.com"
+const MAX_COUNT = 3
+const updateAndShowCount = (msg) => {
+  document.getElementById("msg").innerHTML = msg;
+}
+const updateAndShowTotalCount = (msg) => {
+  document.getElementById("msgTotal").innerHTML = msg;
+}
+const updateAndShowTitle = (msg) => {
+  document.getElementById("msgTitle").innerHTML = msg;
+}
+
+const appendIFrame = () => {
+    const iframe = document.createElement("iframe");
+    iframe.src = TARGET_URL;
+    iframe.width = "0";
+    iframe.height = "0";
+    document.body.appendChild(iframe); //Append iframe to body element
+}
+
+const removeAllIFrame = () => {
+    const iframes = document.querySelectorAll("iframe"); //Get all iframes
+
+    for(const item of iframes) {
+        console.log('item: ', item)
+        item.parentNode.removeChild(item)
+    }
+}
+
+const sleep = (second = 1) => new Promise((resolve)=>{
+    setTimeout(() => {
+        return resolve()
+    }, second * 1000);
+})
+
+window.onload = async function () {
+	let count = 0; 
+    let total = 0
+
+    updateAndShowTitle(`I love you: ${TARGET_URL}`)
+
+    while (true) {
+        await sleep()
+
+        if(count >=MAX_COUNT) {
+            removeAllIFrame()
+            count = 0 
+            continue
+        };
+
+        appendIFrame()
+        count += 1
+        total += 1 
+        updateAndShowCount(`Current opening ${count} : ${TARGET_URL}`)
+        updateAndShowTotalCount(`Total opened ${total} : ${TARGET_URL}`)
+    }
+}
+</script>
+</body>
+</html>
