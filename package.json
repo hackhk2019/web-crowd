@@ -1,0 +1,15 @@
+{
+  "name": "web-crowd",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "repository": "https://github.com/hackhk2019/web-crowd.git",
+  "author": "kmd <kmd.is.good@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
