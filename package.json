@@ -6,7 +6,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "repository": "https://github.com/hackhk2019/web-crowd.git",
   "author": "kmd <kmd.is.good@gmail.com>",
